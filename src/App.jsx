@@ -79,43 +79,11 @@ const App = () => {
                     </h2>
                 </Grid>
                 <Grid container spacing={2} sx={{paddingTop: "125px"}}>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(0)}}>{QuoteTitle(0)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(1)}}>{QuoteTitle(1)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(2)}}>{QuoteTitle(2)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(3)}}>{QuoteTitle(3)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(4)}}>{QuoteTitle(4)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(5)}}>{QuoteTitle(5)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(6)}}>{QuoteTitle(6)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(7)}}>{QuoteTitle(7)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(8)}}>{QuoteTitle(8)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(9)}}>{QuoteTitle(9)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(10)}}>{QuoteTitle(10)}</QuoteButton>
-                    </Grid>
-                    <Grid item xs={4}>
-                        <QuoteButton onClick={() => {setCategoryIndex(11)}}>{QuoteTitle(11)}</QuoteButton>
-                    </Grid>
-
+                    {[...Array(12)].map((_, idx) =>
+                        <Grid item xs={4} key={idx}>
+                            <QuoteTitleButton onClick={() => {setCategoryIndex(idx)}}>{QuoteTitle(idx)}</QuoteTitleButton>
+                        </Grid>
+                    )}
                 </Grid>
             </Grid>
         </div>

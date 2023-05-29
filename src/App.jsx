@@ -42,7 +42,7 @@ const App = () => {
         return () => clearTimeout(intervalId);
     }, []);
 
-    const QuoteButton = (props) => {
+    const QuoteTitleButton = (props) => {
         return (
             <Button variant="contained"
                     fullWidth

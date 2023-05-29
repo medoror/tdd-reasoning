@@ -1,0 +1,16 @@
+export const how_to_do_tdd = [
+    "Write a test before anything, to make you think through what you're tyring to do",
+    "Run the test to make sure it fails in a way you expect; examine the failure message",
+    "Write the simplest code that causes the test to pass, even if you know it's bogus or naive.",
+    "Be mechanical",
+    "Run the test again and make sure it passes",
+    "High five",
+    "Refactor code and test for DRYness, readability, clarity; consider introducing an OO pattern if it makes sense",
+    "Practice, even in simple cases",
+    "Focus on behavior not implementation",
+    "Focused tests - think of one particular aspect",
+    "Strive for highly specific tests that test a single part of the code (single public method)",
+    "Name tests/specs in a very specific and readable way.  The names should communicate intent; if one test in a thousand fails, it should be clear from the name of these exactly what is broken",
+    "Don't test privates because they are implementation; if the desire arises to test something private, consider extracting an object that can be tested in isolation",
+    "We're looking for tests to be near-instant; if not, consider breaking up the tests,  In the Java world, it's not uncommon to have hundreds/thousands run in less than 10 seconds (once IO is stubbed)",
+]

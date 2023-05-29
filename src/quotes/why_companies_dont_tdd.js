@@ -1,0 +1,18 @@
+export const why_companies_dont_tdd = [
+    "People dont understand what software development is",
+    "Traditional software development culture is about rock stars - experienced employees are considered/consider themselves not to need tests because they are such good coders; egos can get in the way",
+    "CS courses arent about development",
+    "Lack of understanding of the real issues that arise when developing software in a team over extended periods",
+    "Lack of definition of benefits - most software developers don't know wny TDD is a good idea",
+    "People need to experience the feeling of TDD - no one is convinced just by hearing about it",
+    "Inexperienced developers may need to feel the pain of not doing TDD to appreciate its benefits",
+    "TDD is like wearing a helmet on a motorcycle, to begin with the helmet is uncomfortable",
+    "It's often difficult to be the first at a company to do it",
+    "Momentum with TDD hard to over come",
+    "Changing to TDD is hard; huge initial cost to adding tests to a legacy codebase",
+    "To some extent, theres benn a marketing failure in the XP/Agile community of communication TDDs benefits to the business and the codebase",
+    "TDD challenges the status quo: it's very disruptive to traditional culture",
+    "TDD forces developers to be very practical.  It forces you to get to work with very little ceremony",
+    "Less job security; if anyone can read tests and understand your code, you're less important as an individual",
+    "Sometimes TDD can seem to make things almost too easy, or less interesting; developers tend to enjoy complexity and the simplification TDD provides can bring about a sense of dullness in a codebase",
+]

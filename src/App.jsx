@@ -2,7 +2,6 @@ import React, {useMemo} from 'react';
 import TextTransition, {presets} from 'react-text-transition';
 import {challenges_with_tdd} from "./quotes/challenges_with_tdd.js";
 import Grid from '@mui/material/Grid';
-import {styled} from '@mui/material/styles';
 import {Button} from "@mui/material";
 import {definition_tdd} from "./quotes/definition_tdd.js";
 import {how_to_do_tdd} from "./quotes/how_to_do_tdd.js";
@@ -47,7 +46,7 @@ const App = () => {
         return (
             <Button variant="contained"
                     fullWidth
-                    sx={{backgroundColor: "#fff", color: "#000", ":hover": {bgcolor: "#bfbfbf", color: "white"}}}
+                    sx={{backgroundColor: "#fff", color: "#000", ":hover": {bgcolor: "#bfbfbf", color: "#fff"}}}
                     {...props}>
                 {props.children}
             </Button>
@@ -70,7 +69,7 @@ const App = () => {
             <Grid container spacing={2}>
                 <Grid item xs={12}>
                     <h1 style={{textAlign: 'center'}}>
-                        Test Driven Development Reasoning App
+                        Test Driven Development Reasoning
                     </h1>
                 </Grid>
                 <Grid item xs={12}>
@@ -79,41 +78,44 @@ const App = () => {
                         <TextTransition springConfig={presets.molasses}>{QuoteDescription()}</TextTransition>
                     </h2>
                 </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(0)}}>{QuoteTitle(0)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(1)}}>{QuoteTitle(1)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(2)}}>{QuoteTitle(2)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(3)}}>{QuoteTitle(3)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(4)}}>{QuoteTitle(4)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(5)}}>{QuoteTitle(5)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(6)}}>{QuoteTitle(6)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(7)}}>{QuoteTitle(7)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(8)}}>{QuoteTitle(8)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(9)}}>{QuoteTitle(9)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(10)}}>{QuoteTitle(10)}</QuoteButton>
-                </Grid>
-                <Grid item xs={4}>
-                    <QuoteButton onClick={() => {setCategoryIndex(11)}}>{QuoteTitle(11)}</QuoteButton>
+                <Grid container spacing={2} sx={{paddingTop: "125px"}}>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(0)}}>{QuoteTitle(0)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(1)}}>{QuoteTitle(1)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(2)}}>{QuoteTitle(2)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(3)}}>{QuoteTitle(3)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(4)}}>{QuoteTitle(4)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(5)}}>{QuoteTitle(5)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(6)}}>{QuoteTitle(6)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(7)}}>{QuoteTitle(7)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(8)}}>{QuoteTitle(8)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(9)}}>{QuoteTitle(9)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(10)}}>{QuoteTitle(10)}</QuoteButton>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <QuoteButton onClick={() => {setCategoryIndex(11)}}>{QuoteTitle(11)}</QuoteButton>
+                    </Grid>
+
                 </Grid>
             </Grid>
         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import TextTransition, {presets} from 'react-text-transition';
 import {challenges_with_tdd} from "./quotes/challenges_with_tdd.js";
 import Grid from '@mui/material/Grid';
@@ -41,30 +41,27 @@ QUOTE_MAP.set("Why not test afterwards?", why_not_test_after);
 QUOTE_MAP.set("Why TDD?", why_tdd_quotes);
 
 const App = () => {
-    const [index, setIndex] = React.useState(0);
-    const [category_index, setCategoryIndex] = React.useState(0);
+    const [descriptionIndex, setDescriptionIndex] = React.useState(0);
+    const [categoryIndex, setCategoryIndex] = React.useState(0);
 
     React.useEffect(() => {
         const intervalId = setInterval(
-            () => setIndex((index) => index + 1),
-            9000, // every 3 seconds
+            () => setDescriptionIndex((index) => index + 1),
+            9000,
         );
         return () => clearTimeout(intervalId);
     }, []);
 
 
-    function getQuoteTitle(idx = category_index){
-        const relevantTitle = Array.from(QUOTE_MAP.keys())[idx]
-        return <>{relevantTitle}</>
-    }
+    const QuoteTitle = (idx = categoryIndex) => useMemo(() => {
+        return <>{Array.from(QUOTE_MAP.keys())[idx]}</>
+    }, [idx]);
 
-    function getQuoteDescription() {
-        const relevantQuotes = QUOTE_MAP.get(Array.from(QUOTE_MAP.keys())[category_index])
-        const computed_idx = index % relevantQuotes.length
-        return <>
-            {relevantQuotes[computed_idx]}
-        </>;
-    }
+    const QuoteDescription = () => {
+        const relevantQuotes = QUOTE_MAP.get(Array.from(QUOTE_MAP.keys())[categoryIndex])
+        const descriptionIdx = descriptionIndex % relevantQuotes.length
+        return <>{relevantQuotes[descriptionIdx]}</>;
+    };
 
     return (
         <div>
@@ -76,45 +73,45 @@ const App = () => {
                 </Grid>
                 <Grid item xs={12}>
                     <h2>
-                        <TextTransition springConfig={presets.wobbly}>{getQuoteTitle()}</TextTransition>
-                        <TextTransition springConfig={presets.wobbly}>{getQuoteDescription()}</TextTransition>
+                        <TextTransition springConfig={presets.molasses}>{QuoteTitle()}</TextTransition>
+                        <TextTransition springConfig={presets.molasses}>{QuoteDescription()}</TextTransition>
                     </h2>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(0)}}>{getQuoteTitle(0)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(0)}}>{QuoteTitle(0)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(1)}}>{getQuoteTitle(1)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(1)}}>{QuoteTitle(1)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(2)}}>{getQuoteTitle(2)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(2)}}>{QuoteTitle(2)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(3)}}>{getQuoteTitle(3)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(3)}}>{QuoteTitle(3)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(4)}}>{getQuoteTitle(4)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(4)}}>{QuoteTitle(4)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(5)}}>{getQuoteTitle(5)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(5)}}>{QuoteTitle(5)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(6)}}>{getQuoteTitle(6)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(6)}}>{QuoteTitle(6)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(7)}}>{getQuoteTitle(7)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(7)}}>{QuoteTitle(7)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(8)}}>{getQuoteTitle(8)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(8)}}>{QuoteTitle(8)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(9)}}>{getQuoteTitle(9)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(9)}}>{QuoteTitle(9)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(10)}}>{getQuoteTitle(10)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(10)}}>{QuoteTitle(10)}</StyledButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(11)}}>{getQuoteTitle(11)}</StyledButton>
+                    <StyledButton fullWidth onClick={() => {setCategoryIndex(11)}}>{QuoteTitle(11)}</StyledButton>
                 </Grid>
             </Grid>
         </div>

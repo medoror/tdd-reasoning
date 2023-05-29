@@ -16,15 +16,6 @@ import {why_not_test_after} from "./quotes/why_not_test_after.js";
 import {why_tdd_quotes} from "./quotes/why_tdd.js";
 import {when_do_write_tests_first} from "./quotes/when_do_write_tests_first.js";
 
-const StyledButton = styled(Button)(({theme}) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-}));
-
-
 const QUOTE_MAP = new Map();
 
 QUOTE_MAP.set("What are some of the challenges with TDD?", challenges_with_tdd);
@@ -52,6 +43,17 @@ const App = () => {
         return () => clearTimeout(intervalId);
     }, []);
 
+    const QuoteButton = (props) => {
+        return (
+            <Button variant="contained"
+                    fullWidth
+                    sx={{backgroundColor: "#fff", color: "#000", ":hover": {bgcolor: "#bfbfbf", color: "white"}}}
+                    {...props}>
+                {props.children}
+            </Button>
+        );
+    };
+
 
     const QuoteTitle = (idx = categoryIndex) => useMemo(() => {
         return <>{Array.from(QUOTE_MAP.keys())[idx]}</>
@@ -78,40 +80,40 @@ const App = () => {
                     </h2>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(0)}}>{QuoteTitle(0)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(0)}}>{QuoteTitle(0)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(1)}}>{QuoteTitle(1)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(1)}}>{QuoteTitle(1)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(2)}}>{QuoteTitle(2)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(2)}}>{QuoteTitle(2)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(3)}}>{QuoteTitle(3)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(3)}}>{QuoteTitle(3)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(4)}}>{QuoteTitle(4)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(4)}}>{QuoteTitle(4)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(5)}}>{QuoteTitle(5)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(5)}}>{QuoteTitle(5)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(6)}}>{QuoteTitle(6)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(6)}}>{QuoteTitle(6)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(7)}}>{QuoteTitle(7)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(7)}}>{QuoteTitle(7)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(8)}}>{QuoteTitle(8)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(8)}}>{QuoteTitle(8)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(9)}}>{QuoteTitle(9)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(9)}}>{QuoteTitle(9)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(10)}}>{QuoteTitle(10)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(10)}}>{QuoteTitle(10)}</QuoteButton>
                 </Grid>
                 <Grid item xs={4}>
-                    <StyledButton fullWidth onClick={() => {setCategoryIndex(11)}}>{QuoteTitle(11)}</StyledButton>
+                    <QuoteButton onClick={() => {setCategoryIndex(11)}}>{QuoteTitle(11)}</QuoteButton>
                 </Grid>
             </Grid>
         </div>
